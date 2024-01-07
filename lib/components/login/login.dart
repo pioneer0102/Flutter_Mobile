@@ -1,7 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_flutter/components/nextPage/nextPage.dart';
 // import 'package:myflutter/Animation/Fade_Animation.dart';
 
 class FormData {
@@ -69,8 +68,7 @@ class _LoginState extends State<Login> {
       _errorPassword = passwordError ?? '';
       if (emailError == null && passwordError == null) {
         // print(emailController.text + passwordController.text);
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const NextPage()));
+        Navigator.pushNamed(context, '/bloc');
       }
     });
   }

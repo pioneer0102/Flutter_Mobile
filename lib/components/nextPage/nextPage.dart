@@ -9,7 +9,7 @@ class NextPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final counterProvider = Provider.of<CounterProvider>(context);
     return Scaffold(
-        appBar: AppBar(title: const Text("Second Page")),
+        appBar: AppBar(title: const Text("Provider Page")),
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

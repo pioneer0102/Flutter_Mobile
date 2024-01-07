@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_flutter/bloc/HomeBloc.dart';
+import 'package:my_flutter/bloc/data_bloc.dart';
 import 'package:my_flutter/components/login/login.dart';
 import 'package:my_flutter/components/nextPage/nextPage.dart';
 import 'package:my_flutter/providers/provider.dart';
@@ -8,7 +11,8 @@ void main() {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
-          create: (BuildContext context) => CounterProvider())
+          create: (BuildContext context) => CounterProvider()),
+      BlocProvider(create: (BuildContext context) => DataBloc())
     ],
     child: const MyApp(),
   ));
@@ -42,7 +46,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const Login(),
-      routes: {'/next': (context) => const NextPage()},
+      routes: {
+        '/next': (context) => const NextPage(),
+        '/bloc': (context) => const HomeBloc(),
+      },
     );
   }
 }
