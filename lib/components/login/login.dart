@@ -68,7 +68,7 @@ class _LoginState extends State<Login> {
       _errorPassword = passwordError ?? '';
       if (emailError == null && passwordError == null) {
         // print(emailController.text + passwordController.text);
-        Navigator.pushNamed(context, '/bloc');
+        Navigator.pushNamed(context, '/screen');
       }
     });
   }
@@ -188,7 +188,7 @@ class _LoginState extends State<Login> {
                         )),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/next');
+                        Navigator.pushNamed(context, '/screen');
                       },
                       child: Text("Sign up",
                           style: TextStyle(
